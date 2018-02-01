@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { ShotChart } from './ShotChart';
+
 import nba from 'nba';
 import {Profile} from "./Profile"
+import {DataViewContainer} from "./DataViewContainer"
 
 export class Main extends React.Component{
     state = {
-        playerId: nba.findPlayer('Stephen Curry').playerId,
+        playerId: nba.findPlayer('Lebron James').playerId,
         playerInfo: {},
 
     }
@@ -22,7 +23,8 @@ export class Main extends React.Component{
         return (
             <div className="main">
                 <Profile playerInfo = {this.state.playerInfo}/>
-                <ShotChart playerId={this.state.playerId}/>
+                <DataViewContainer playerId = {this.state.playerInfo.playerId}/>
+
             </div>
         );
     }
